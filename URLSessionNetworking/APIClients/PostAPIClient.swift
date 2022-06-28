@@ -29,7 +29,7 @@ private struct CreatePostEndPoint: EndPoint {
 
 
 enum PostAPIClient: GenericAPIClient {
-    static func fetchUser(completion: @escaping (Result<[Post], NetworkError>) -> Void) {
+    static func fetchPosts(completion: @escaping (Result<[Post], NetworkError>) -> Void) {
         let request = FetchPostEndPoint()
         startRequest(with: request.request, completion: completion)
     }
