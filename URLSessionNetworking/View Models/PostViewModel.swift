@@ -9,7 +9,7 @@ import Foundation
 
 extension PostViewModel {
     class Callback {
-        var didFetchPosts: ([Post])-> Void = { _ in }
+        var didFetchPosts: ()-> Void = { }
         var didFailed: (String)-> Void = { _ in }
     }
 }
@@ -17,11 +17,14 @@ extension PostViewModel {
 class PostViewModel {
     let callback = Callback()
     
+    private(set) var posts = [Post]()
+    
     func fetch() {
         PostAPIClient.fetchPosts {[weak self] result in
             switch result {
             case .success(let posts):
-                self?.callback.didFetchPosts(posts)
+                self?.posts = posts
+                self?.callback.didFetchPosts()
             case .failure(let error):
                 self?.callback.didFailed(error.description)
             }
