@@ -8,7 +8,7 @@
 import Foundation
 
 private struct FetchPostEndPoint: EndPoint {
-    var path: String = "post"
+    var path: String = "/posts"
 }
 
 private struct CreatePostEndPoint: EndPoint {
@@ -18,7 +18,7 @@ private struct CreatePostEndPoint: EndPoint {
         self.postRequest = postRequest
     }
     
-    var path: String = "posts"
+    var path: String = "/posts"
     
     var method: HTTPMethod = .post
     
@@ -34,8 +34,7 @@ enum PostAPIClient: GenericAPIClient {
         startRequest(with: request.request, completion: completion)
     }
     
-    static func createPost(
-        postRequest: CreatePostRequest,
+    static func createPost(postRequest: CreatePostRequest,
         completion: @escaping (Result<CreatePostResponse, NetworkError>) -> Void) {
         let req = CreatePostEndPoint(postRequest: postRequest)
         startRequest(with: req.request, completion: completion)

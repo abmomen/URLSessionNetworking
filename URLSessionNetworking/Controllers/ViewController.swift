@@ -8,21 +8,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let postViewModel = PostViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let post = CreatePostRequest(title: "title", body: "my post body", userId: 333)
-        PostAPIClient.createPost(postRequest: post) { result in
-            switch result {
-            case .success(let response):
-                print(response)
-            case .failure(let error):
-                print(error.description)
-            }
+        postViewModel.fetch()
+        
+        handleNetworkCallbacks()
+    }
+    
+    private func handleNetworkCallbacks() {
+        postViewModel.callback.didFetchPosts = {[weak self] posts in
+            print(posts)
+        }
+        
+        postViewModel.callback.didFailed = {[weak self] error in
+            print(error)
         }
     }
-
-
 }
 

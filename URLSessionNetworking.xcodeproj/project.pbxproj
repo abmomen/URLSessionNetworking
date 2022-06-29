@@ -22,6 +22,7 @@
 		CC367454286B2BF500E91C7F /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC367453286B2BF500E91C7F /* HTTPMethod.swift */; };
 		CC367456286B2C1B00E91C7F /* ErrorResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC367455286B2C1B00E91C7F /* ErrorResponseModel.swift */; };
 		CC367458286B2C7D00E91C7F /* PostAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC367457286B2C7D00E91C7F /* PostAPIClient.swift */; };
+		CC61EE77286C33170008C251 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC61EE76286C33170008C251 /* PostViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		CC367453286B2BF500E91C7F /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		CC367455286B2C1B00E91C7F /* ErrorResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseModel.swift; sourceTree = "<group>"; };
 		CC367457286B2C7D00E91C7F /* PostAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPIClient.swift; sourceTree = "<group>"; };
+		CC61EE76286C33170008C251 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				CC367442286B2AA400E91C7F /* Models */,
 				CC367443286B2AA900E91C7F /* Networking */,
 				CC367441286B2A8B00E91C7F /* Storyboards */,
+				CC61EE75286C32E90008C251 /* View Models */,
 				CC367439286B2A3B00E91C7F /* Info.plist */,
 				CC367434286B2A3B00E91C7F /* Assets.xcassets */,
 			);
@@ -158,6 +161,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CC61EE75286C32E90008C251 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC61EE76286C33170008C251 /* PostViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC61EE77286C33170008C251 /* PostViewModel.swift in Sources */,
 				CC36744B286B2B7700E91C7F /* EndPoint.swift in Sources */,
 				CC367448286B2B2000E91C7F /* Constants.swift in Sources */,
 				CC367456286B2C1B00E91C7F /* ErrorResponseModel.swift in Sources */,
