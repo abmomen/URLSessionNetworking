@@ -8,17 +8,17 @@
 import Foundation
 
 protocol GenericAPIClient {
-    static func startRequest<T: Decodable>(with request: URLRequest,
+    static func startRequest<T: Decodable>(with endPoint: EndPoint,
                                            decoder: JSONDecoder,
                                            completion: @escaping (Result<T, NetworkError>) -> Void)
 }
 
 extension GenericAPIClient {
-    static func startRequest<T: Decodable>(with request: URLRequest,
+    static func startRequest<T: Decodable>(with endPoint: EndPoint,
                                            decoder: JSONDecoder = JSONDecoder(),
                                            completion: @escaping (Result<T, NetworkError>) -> Void) {
         let session = URLSession.shared
-        session.dataTask(with: request) { data, response, error in
+        session.dataTask(with: endPoint.request) { data, response, error in
             if let error = error {
                 completion(.failure(.genericError(error)))
                 return

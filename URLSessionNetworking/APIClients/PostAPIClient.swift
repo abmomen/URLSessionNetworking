@@ -30,13 +30,13 @@ private struct CreatePostEndPoint: EndPoint {
 
 enum PostAPIClient: GenericAPIClient {
     static func fetchPosts(completion: @escaping (Result<[Post], NetworkError>) -> Void) {
-        let request = FetchPostEndPoint()
-        startRequest(with: request.request, completion: completion)
+        let endPoint = FetchPostEndPoint()
+        startRequest(with: endPoint, completion: completion)
     }
     
     static func createPost(postRequest: CreatePostRequest,
         completion: @escaping (Result<CreatePostResponse, NetworkError>) -> Void) {
-        let req = CreatePostEndPoint(postRequest: postRequest)
-        startRequest(with: req.request, completion: completion)
+        let endPoint = CreatePostEndPoint(postRequest: postRequest)
+        startRequest(with: endPoint, completion: completion)
     }
 }
